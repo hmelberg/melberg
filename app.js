@@ -297,7 +297,7 @@ function renderProjects(projects) {
       : "";
 
     return [
-      `<article class=\"${classes.join(" \")}\">`,
+        `<article class="${classes.join(" ")}">`,
       `<p class=\"badges\">${featuredBadge}</p>`,
       `<h2>${escapeHtml(project.displayName)}</h2>`,
       `<p class=\"host\">${escapeHtml(project.hostname)}</p>`,

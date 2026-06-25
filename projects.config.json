@@ -1,0 +1,31 @@
+{
+  "githubUser": "hmelberg",
+  "baseDomain": "melberg.app",
+  "excludeRepos": [
+    ".github"
+  ],
+  "excludeHosts": [
+    "melberg.app",
+    "www.melberg.app"
+  ],
+  "featuredHosts": [
+    "stick.melberg.app"
+  ],
+  "featuredRepos": [],
+  "repoToSubdomain": {
+    "microdata-api": "micro"
+  },
+  "manualProjects": [
+    {
+      "name": "stick",
+      "hostname": "stick.melberg.app",
+      "description": "Manual entry"
+    }
+  ],
+  "sortBy": "name",
+  "liveCheck": {
+    "enabled": true,
+    "timeoutMs": 2200,
+    "concurrency": 6
+  }
+}

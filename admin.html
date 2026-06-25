@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Melberg Admin</title>
+  <style>
+    :root {
+      --bg: #f4efe9;
+      --card: #fffdf9;
+      --line: #d8c8b6;
+      --ink: #201912;
+      --muted: #6a5a49;
+      --accent: #8c3110;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fbf5ee, var(--bg));
+      color: var(--ink);
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px 16px 48px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 380px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      font-family: Consolas, Menlo, monospace;
+      font-size: 0.9rem;
+      line-height: 1.35;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    button, a {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 8px 14px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.93rem;
+    }
+
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .status {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      min-height: 1.4em;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Melberg admin</h1>
+    <p>Use this page to set local override config without redeploy. Click save, then open the main page and refresh.</p>
+
+    <section class="panel">
+      <textarea id="configEditor" spellcheck="false"></textarea>
+      <div class="row">
+        <button type="button" id="saveButton" class="primary">Save override</button>
+        <button type="button" id="clearButton">Clear override</button>
+        <button type="button" id="loadBaseButton">Load base config</button>
+        <a href="index.html">Open main page</a>
+      </div>
+      <p id="status" class="status"></p>
+    </section>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

@@ -86,11 +86,31 @@ This does not change files in GitHub. It is useful for quick testing before comm
 
 ## Netlify deploy
 
-- Connect this folder/repository in Netlify.
-- Build command: none
+- GitHub repository: `hmelberg/melberg`
+- Import that repository into Netlify.
+- Branch to deploy: `main`
+- Base directory: leave empty
+- Build command: leave empty
 - Publish directory: `.`
+- Functions directory: leave empty
+
+### Recommended Netlify setup
+
+1. In Netlify, choose `Add new site` -> `Import an existing project`.
+2. Pick GitHub and select `hmelberg/melberg`.
+3. Keep build settings empty except for publish directory `.`.
+4. Deploy the site.
+5. In `Domain management`, add custom domain `melberg.app`.
+6. Point DNS for `melberg.app` to Netlify.
+7. Enable HTTPS in Netlify once DNS is active.
 
 `netlify.toml` already sets `publish = "."` and no-cache headers for config/js.
+
+### After deploy
+
+- Future pushes to `main` trigger redeploy automatically.
+- New GitHub repos under `hmelberg` can appear on the page without changing this repo, because `app.js` fetches them at runtime.
+- Changes to `projects.config.json` still require a normal Git push so Netlify serves the updated config file.
 
 ## Optional: force refresh from admin
 
